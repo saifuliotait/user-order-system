@@ -18,7 +18,9 @@ class OrderController extends Controller
             $totalRevenue += $order->quantity * $order->unit_price;
         }
 
-        return $totalRevenue;
+        return [
+            'total_revenue' => $totalRevenue
+        ];
     }
 
     public function generateReport()
